@@ -1,6 +1,8 @@
 import { createClient } from 'edgedb'
 import { getTransactions } from '@/dbschema/queries'
 
+export const dynamic = 'auto'
+
 const client = createClient()
 
 export default async function Page() {
