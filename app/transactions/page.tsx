@@ -1,35 +1,17 @@
 import { createClient } from 'edgedb'
+import { getTransactions } from '@/dbschema/queries'
 
 const client = createClient()
 
-type Transaction = {
-  id: string
-  transaction_date: string
-  amount: number
-  name: string
-  transaction_type: string
-}
-
-const query = `select Transaction {
-  id,
-  transaction_date,
-  amount,
-  name,
-  transaction_type
-};
-`
-
 export default async function Page() {
-  const result = await client.query<Transaction>(query)
-
-  console.log(result)
+  const result = await getTransactions(client)
 
   return (
     <div>
       {result.map((tx) => (
         <div key={tx.id}>
           <div>{tx.id}</div>
-          <div>{tx.transaction_date}</div>
+          <div>{tx.transaction_date.toString()}</div>
           <div>{tx.amount}</div>
           <div>{tx.name}</div>
           <div>{tx.transaction_type}</div>
