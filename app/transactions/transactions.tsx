@@ -1,11 +1,7 @@
 'use client'
 
-type TransactionViewModel = {
-  amount: string
-  date: string
-  id: string
-  name: string
-}
+import { TransactionViewModel } from './ui'
+
 type TransactionsProps = {
   transactions: TransactionViewModel[]
 }
