@@ -1,6 +1,7 @@
 'use client'
 
 import { TransactionViewModel } from './ui'
+import { Button } from '@adobe/react-spectrum'
 
 type TransactionsProps = {
   transactions: TransactionViewModel[]
@@ -17,6 +18,9 @@ function Transactions(props: TransactionsProps) {
           <div>{tx.name}</div>
         </div>
       ))}
+      <Button variant="primary" onPress={() => console.log('clicked')}>
+        click here
+      </Button>
     </>
   )
 }
