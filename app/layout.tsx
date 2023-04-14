@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Budget',
   description: 'track your monies',
 }
+import './styles.css'
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -18,7 +19,11 @@ export default function RootLayout(props: RootLayoutProps) {
         <SyncColorScheme />
       </head>
       <body>
-        <Providers>{props.children}</Providers>
+        <Providers>
+          <main>
+            <div className="content">{props.children}</div>
+          </main>
+        </Providers>
       </body>
     </html>
   )
