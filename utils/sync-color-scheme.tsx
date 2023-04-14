@@ -4,11 +4,11 @@ const lightClassInterpolation = theme?.light?.['spectrum--light']!
 const nightClassInterpolation = theme?.dark?.['spectrum--darkest']!
 
 function syncColorScheme() {
-  const c = document.documentElement.classList
-  const s = document.documentElement.style
-  const n = window.matchMedia('(prefers-color-scheme: dark)')
-  const l = 'lightClassInterpolation'
-  const nc = 'nightClassInterpolation'
+  var c = document.documentElement.classList
+  var s = document.documentElement.style
+  var n = window.matchMedia('(prefers-color-scheme: dark)')
+  var l = 'lightClassInterpolation'
+  var nc = 'nightClassInterpolation'
   function u() {
     if (!l || !nc) return
     if (n.matches) {
@@ -22,7 +22,7 @@ function syncColorScheme() {
     }
   }
   u()
-  n.addEventListener('change', () => u())
+  n.addEventListener('change', u)
 }
 const stringWithReplacements = String(syncColorScheme)
   .replace('lightClassInterpolation', lightClassInterpolation)
