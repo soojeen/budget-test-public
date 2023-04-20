@@ -9,7 +9,7 @@ type TransactionsProps = {
 
 function Transactions(props: TransactionsProps) {
   return (
-    <>
+    <div>
       {props.transactions.map((tx) => (
         <div key={tx.id}>
           <div>{tx.id}</div>
@@ -21,7 +21,7 @@ function Transactions(props: TransactionsProps) {
       <Button variant="primary" onPress={() => console.log('clicked')}>
         click here
       </Button>
-    </>
+    </div>
   )
 }
 
