@@ -1,6 +1,6 @@
 'use client'
 
-import { TransactionViewModel } from './ui'
+import { TransactionViewModel } from './data'
 import { Button } from '@adobe/react-spectrum'
 
 type TransactionsProps = {

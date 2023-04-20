@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-queries": "npx @edgedb/generate queries --file ./dbschema/queries"
   },
   "dependencies": {
     "@adobe/react-spectrum": "3.26.0",
